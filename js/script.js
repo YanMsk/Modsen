@@ -6,6 +6,12 @@ const quitBtn = document.querySelector(".quit");
 
 startBtn.onclick = ()=>{
 quizContainer.classList.add("activeQuiz");
-showQuestions(4);
+showQuestions(1);
 }
 
+function showQuestions(index){
+	const questionText = document.querySelector(".question-box__question");
+	const optionList = document.querySelector(".question-box__option-list");
+	let questionTag = '<span>'+ questions[index].question +'</span>';							
+	questionText.innerHTML = questionTag;
+}
