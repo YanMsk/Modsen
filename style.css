@@ -8,7 +8,7 @@
 }
 
 body{
-	background: #e5fbf7;
+	background: #F7FDFC;
 }
 ::selection {
   color: #fff;
@@ -23,6 +23,7 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	
 }
 
 .fa-check{
@@ -36,12 +37,9 @@ body{
 }
 .start_btn button{
 	display: inline-block;	
-	box-sizing: border-box;
 	padding: 0 24px;
-	margin: 0 15px 15px 0;
-	outline: none;
-	border: none;   
-	 
+	border: none;  
+	border-bottom: 7px solid #0c5d41; 
 	height: 50px;
 	width: 200px;
 	line-height: 37px;
@@ -50,11 +48,9 @@ body{
 	font-weight: 500;
 	text-decoration: none;
 	color: #0c5d41;
-	background-color: #e5fbf7;
-	border-bottom: 7px solid #0c5d41;
+	background-color: #F7FDFC;
 	cursor: pointer;
 	transition: all 0.3s ease;
-  
 }
 
 .start_btn button:hover{
@@ -64,7 +60,6 @@ body{
 
 .quiz_container{
 	width: 700px;
-	background: #fff;
   /* opacity: 0;
 	pointer-events: none;
 	transform: translate(-50%,-50%) scale(0.9);   */
@@ -73,7 +68,6 @@ body{
  
 	height: 200px;
 	padding: 0 30px;
-	background: #e5fbf7;
 	border-bottom: 5px solid #169C6E;
 	display: flex;
   flex-direction: column;
@@ -93,7 +87,6 @@ body{
 display: flex;
 align-items: center;
 user-select: none;
-
 }
 
 .total_questions span p{
@@ -102,9 +95,12 @@ padding: 0 5px;
 }
 
 .quiz_container section{
+	position: relative;
 	padding: 30px 50px 25px 50px;
 	background: #fff;
   z-index: 1; 
+	box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+	            0px 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .quiz_container section .question_text{
@@ -143,7 +139,6 @@ margin-bottom: 0px;
 .quiz_container footer{
 	height: 130px;
 	width: 100%;
-	background: #e5fbf7;
 	padding: 0 30px;
 	margin-top: 3px;
 	display: flex;
@@ -154,11 +149,9 @@ margin-bottom: 0px;
 
 footer .next_btn{
 	display: inline-block;	
-	box-sizing: border-box;
 	padding: 0 20px;
-	margin: 0 15px 15px 0;
-	outline: none;
-	border: none;    
+	border: none;   
+	border-bottom: 7px solid #0c5d41; 
 	height: 45px;
 	width: 180px;
 	line-height: 37px;
@@ -168,7 +161,6 @@ footer .next_btn{
 	text-decoration: none;
 	color: #fff;
 	background-color: #169C6E;
-	border-bottom: 7px solid #0c5d41;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
@@ -181,12 +173,13 @@ footer .next_btn:hover{
 	background: #fff ;
 	width: 700px;
 	padding: 25px 30px;
-	border-radius: 5px;
 	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
+	box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+	            0px 6px 20px 0 rgba(0,0,0,0.19);
 	opacity: 0;
 	pointer-events: none;
 	transform: translate(-50%,-50%) scale(0.9);    
@@ -222,12 +215,9 @@ footer .next_btn:hover{
 
 .result_container .buttons button{
 	display: inline-block;	
-	box-sizing: border-box;
 	padding: 0 20px;
-	margin: 0 15px 15px 0;
-	outline: none;
 	border: none;    
- 
+	border-bottom: 7px solid #0c5d41;
 	height: 45px;
 	width: 180px;
 	line-height: 37px;
@@ -237,7 +227,6 @@ footer .next_btn:hover{
 	text-decoration: none;
 	color: #fff;
 	background-color: #169C6E;
-	border-bottom: 7px solid #0c5d41;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
