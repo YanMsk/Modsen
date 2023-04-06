@@ -6,12 +6,24 @@ const quitBtn = document.querySelector(".quit");
 
 startBtn.onclick = ()=>{
 quizContainer.classList.add("activeQuiz");
-showQuestions(1);
+showQuestions(0);
+}
+
+let questionsCount = 0;
+let nextBtn = document.querySelector(".next-btn")
+nextBtn.onclick = () =>{
+	questionsCount++;
+	showQuestions(questionsCount)
 }
 
 function showQuestions(index){
 	const questionText = document.querySelector(".question-box__question");
 	const optionList = document.querySelector(".question-box__option-list");
-	let questionTag = '<span>'+ questions[index].question +'</span>';							
+	let questionTag = '<span>'+ questions[index].question +'</span>';
+	let optionTag ='<div class="question-box__option"><span>' + questions[index].options[0] + '</span></div>'
+									+'<div class="question-box__option"><span>' + questions[index].options[1] + '</span></div>'
+									+'<div class="question-box__option"><span>' + questions[index].options[2] + '</span></div>';
+								
 	questionText.innerHTML = questionTag;
+	optionList.innerHTML = optionTag;
 }
