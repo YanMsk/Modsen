@@ -3,6 +3,7 @@ const quizContainer = document.querySelector(".quiz-container");
 const resualtContainer = document.querySelector(".resualt-container");
 const replayBtn = document.querySelector(".replay");
 const quitBtn = document.querySelector(".quit");
+const optionList = document.querySelector(".question-box__option-list");
 
 startBtn.onclick = ()=>{
 quizContainer.classList.add("activeQuiz");
@@ -18,16 +19,25 @@ nextBtn.onclick = () =>{
 	if(questionCount < questions.length-1){
 	questionCount++;
 	questionNumber++;
-	showQuestions(questionCount)
+	showQuestions(questionCount);
 	showQuestionsCounter(questionNumber);
+	showMultipleAnswer(questionCount);
 	}else {
 		console.log('asd');
 	}
 }
+ 
+ 
+function showMultipleAnswer(index){
+const multipleAnswer = document.querySelector(".multiple-answer-options");
+if(questions[index].answer.length>1){
+	let multipleAnswerTag = `<div class="multiple-answer-options"><span>${'*'}</span>${'You must select multiple answers for this question.'}</div>`;
+	multipleAnswer.innerHTML = multipleAnswerTag;
+}
+}
 
 function showQuestions(index){
 	const questionText = document.querySelector(".question-box__question");
-	const optionList = document.querySelector(".question-box__option-list");
 	let questionTag = '<span>'+ questions[index].question +'</span>';
 	let optionTag ='<div class="question-box__option"><span>' + questions[index].options[0] + '</span></div>'
 									+'<div class="question-box__option"><span>' + questions[index].options[1] + '</span></div>'
@@ -35,7 +45,19 @@ function showQuestions(index){
 								
 	questionText.innerHTML = questionTag;
 	optionList.innerHTML = optionTag;
+
+	const option = document.querySelectorAll(".question-box__option");
+
+	for(let i = 0; i < option.length; i++){
+   option[i].setAttribute("onclick","optionSelection(this)");
+	}
 }
+
+ 
+
+ 
+ 
+ 
 
 
 function showQuestionsCounter(index){

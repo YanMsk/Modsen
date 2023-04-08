@@ -2,7 +2,7 @@ let questions =[
 	{
 		number:1,
 		question:"How many planets are in the solar system?",
-		answer:"8",
+		answer:["8"],
 		options:[
 			"8",
 			"9",
@@ -13,7 +13,7 @@ let questions =[
 	{
 		number:2,
 		question:"What is the freezing point of water?",
-		answer:"0",
+		answer:["0"],
 		options:[
 			"0",
 			"-5",
@@ -24,7 +24,7 @@ let questions =[
 	{
 		number:3,
 		question:"What is the longest river in the world?",
-		answer:"Nile",
+		answer:["Nile"],
 		options:[
 			"Amazon",
 			"Nile",
@@ -35,7 +35,7 @@ let questions =[
 	{
 		number:4,
 		question:"How many chromosomes are in the human genome?",
-		answer:"46",
+		answer:["46"],
 		options:[
 			"42",
 			"44",
@@ -60,7 +60,7 @@ let questions =[
 	{
 		number:6,
 		question:"What is the capital of Canada?",
-		answer:"Ottawa",
+		answer:["Ottawa"],
 		options:[
 			"Ottawa",
 			"Toronto",
@@ -71,7 +71,7 @@ let questions =[
 	{
 		number:7,
 		question:"What is the Jewish New Year called?",
-		answer:"Rosh Hashanah",
+		answer:["Rosh Hashanah"],
 		options:[
 			"Yom Kippur",
 			"Kwanzaa",
