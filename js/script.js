@@ -30,8 +30,11 @@ nextBtn.onclick = () =>{
  
 function showMultipleAnswer(index){
 const multipleAnswer = document.querySelector(".multiple-answer-options");
-if(questions[index].answer.length>1){
+if(questions[index].answer.length > 1){
 	let multipleAnswerTag = `<div class="multiple-answer-options"><span>${'*'}</span>${'You must select multiple answers for this question.'}</div>`;
+	multipleAnswer.innerHTML = multipleAnswerTag;
+}else{
+	let multipleAnswerTag = `<div class="multiple-answer-options"><span>${''}</span>${''}</div>`;
 	multipleAnswer.innerHTML = multipleAnswerTag;
 }
 }
@@ -53,9 +56,6 @@ function showQuestions(index){
 	}
 }
 
- 
-
- 
  
  
 
