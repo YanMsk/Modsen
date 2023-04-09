@@ -22,6 +22,7 @@ let nextBtn = document.querySelector(".next-btn")
 	showQuestions(questionCount);
 	showQuestionsCounter(questionNumber);
 	showMultipleAnswer(questionCount);
+	nextBtn.style.display = "none";
 	}else {
 		console.log('asd');
 	}
@@ -56,6 +57,10 @@ function showQuestions(index){
 		}
 }
 
+
+let tickIcon = '<div class="icon tick"><i class="fa fa-check" aria-hidden="true"></i></div>';
+let crossIcon = '<div class="icon cross"><i class="fa fa-times" aria-hidden="true"></i></div>';
+
 function optionSelection(answer){
 	 
   let userAnswer = answer.textContent;
@@ -64,10 +69,10 @@ function optionSelection(answer){
 
 		if(correctAnswer.includes(userAnswer)){
 			answer.classList.add("correct");
-	
+			answer.insertAdjacentHTML("beforeend",tickIcon);
 		}else{
 			answer.classList.add("incorrect");
- 
+			answer.insertAdjacentHTML("beforeend",crossIcon);
 			for(let i = 0;i<allOptions;i++){
 				if(optionList.children[i].textContent == correctAnswer){
 					optionList.children[i].classList.add("correct-off");
@@ -84,6 +89,7 @@ function optionSelection(answer){
     for(let i = 0;i<allOptions;i++){
         optionList.children[i].classList.add("disabled");
 	  }
+		nextBtn.style.display = "inline-block";
     }
 
 		if(answersTotalCount==1 && incorrectAnswersCount==1){
@@ -91,6 +97,8 @@ function optionSelection(answer){
 				optionList.children[i].classList.add("disabled");
 			}
 		}
+
+	 
 }
 
  
