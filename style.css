@@ -152,11 +152,17 @@ padding: 0 5px;
 	background: #4ddeb5;
 	border-color: #0c5d41;
 }
+.question-box__option.correct-off{
+	color: #158e64;
+	background: #6eddbd;
+	border-color: #158e64;
+	border: none;
+}
 
 .question-box__option.incorrect{
-	color: #ff5454;
+	color: #de3535;
 	background: #eaaaaa;
-	border-color: #ff5454;
+	border-color: #de3535;
 }
 
 .question-box__option.disabled{
