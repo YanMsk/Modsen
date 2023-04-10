@@ -13,6 +13,7 @@ showQuestionsCounter(1);
 
 let questionCount = 0;
 let questionNumber = 1;
+let score = 0;
 const nextBtn = document.querySelector(".next-btn");
 
 
@@ -29,7 +30,7 @@ const nextBtn = document.querySelector(".next-btn");
 	}
 }
  
- 
+
 function showMultipleAnswer(index){
 	const multipleAnswer = document.querySelector(".multiple-answer-options");
 		if(questions[index].answer.length > 1){
@@ -67,8 +68,10 @@ function optionSelection(answer){
   let userAnswer = answer.textContent;
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
+ 
 
 		if(correctAnswer.includes(userAnswer)){
+			score+=1;
 			answer.classList.add("correct");
 			answer.classList.add("disabled");
 			answer.insertAdjacentHTML("beforeend",tickIcon);
@@ -83,10 +86,10 @@ function optionSelection(answer){
 			}
 		}
 
- let correctAnswersCount = document.querySelectorAll('.correct').length;
- let incorrectAnswersCount = document.querySelectorAll('.incorrect').length;
- let userAnswerCount = incorrectAnswersCount+correctAnswersCount;
- let answersTotalCount = questions[questionCount].answer.length;
+	let correctAnswersCount = document.querySelectorAll('.correct').length;
+  let incorrectAnswersCount = document.querySelectorAll('.incorrect').length;
+  let userAnswerCount = incorrectAnswersCount+correctAnswersCount;
+  let answersTotalCount = questions[questionCount].answer.length;
  
 		if(userAnswerCount==answersTotalCount){
     for(let i = 0;i<allOptions;i++){
@@ -101,6 +104,9 @@ function optionSelection(answer){
 			}
 		}
 
+		if(correctAnswersCount == 1 && answersTotalCount == 2){
+			score-=1;
+		}
 	 
 }
 
@@ -115,4 +121,15 @@ function showQuestionsCounter(index){
 function showResult(){
 	quizContainer.classList.remove("activeQuiz");
 	resualtContainer.classList.add("activeResult");
+	const scoreText = document.querySelector(".result-container__score-text");
+	if(score > 5){
+		let scoreTag = '<span>Congratulations, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		scoreText.innerHTML = scoreTag;
+	}else if(score > 3){
+		let scoreTag = '<span>Cool, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		scoreText.innerHTML = scoreTag;
+	}else{
+		let scoreTag = '<span>Its a pity, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		scoreText.innerHTML = scoreTag;
+	}
 }
