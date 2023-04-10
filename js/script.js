@@ -69,9 +69,11 @@ function optionSelection(answer){
 
 		if(correctAnswer.includes(userAnswer)){
 			answer.classList.add("correct");
+			answer.classList.add("disabled");
 			answer.insertAdjacentHTML("beforeend",tickIcon);
 		}else{
 			answer.classList.add("incorrect");
+			answer.classList.add("disabled");
 			answer.insertAdjacentHTML("beforeend",crossIcon);
 			for(let i = 0;i<allOptions;i++){
 				if(optionList.children[i].textContent == correctAnswer){
