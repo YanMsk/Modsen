@@ -1,6 +1,6 @@
 const startBtn = document.querySelector(".start-btn");
 const quizContainer = document.querySelector(".quiz-container");
-const resualtContainer = document.querySelector(".resualt-container");
+const resualtContainer = document.querySelector(".result-container");
 const replayBtn = document.querySelector(".replay");
 const quitBtn = document.querySelector(".quit");
 const optionList = document.querySelector(".question-box__option-list");
@@ -13,9 +13,10 @@ showQuestionsCounter(1);
 
 let questionCount = 0;
 let questionNumber = 1;
-let nextBtn = document.querySelector(".next-btn")
+const nextBtn = document.querySelector(".next-btn");
+
+
 	nextBtn.onclick = () =>{
-	
 	if(questionCount < questions.length-1){
 	questionCount++;
 	questionNumber++;
@@ -23,8 +24,8 @@ let nextBtn = document.querySelector(".next-btn")
 	showQuestionsCounter(questionNumber);
 	showMultipleAnswer(questionCount);
 	nextBtn.style.display = "none";
-	}else {
-		console.log('asd');
+	}else{
+		showResult();
 	}
 }
  
@@ -109,4 +110,9 @@ function showQuestionsCounter(index){
 	const totalQuestions = document.querySelector(".header__total-questions");
 	let totalQuestionsTag = '<span><p>'+ index +'</p>of<p>'+ questions.length +'</p>Questions</span>';
 	totalQuestions.innerHTML = totalQuestionsTag;
+}
+
+function showResult(){
+	quizContainer.classList.remove("activeQuiz");
+	resualtContainer.classList.add("activeResult");
 }

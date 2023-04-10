@@ -66,7 +66,7 @@ body{
 }
 
 .quiz-container.activeQuiz,
-.resualt-container.activeResualt{
+.result-container.activeResult{
 	z-index: 3;
 	opacity: 1;
 	pointer-events: auto;
@@ -258,7 +258,8 @@ margin-bottom: 0px;
 	margin: 20px 0;
 }
 
-.buttons button{
+.replay,
+.quit{
 	display: inline-block;	
 	padding: 0 20px;
 	border: none;    
@@ -276,6 +277,10 @@ margin-bottom: 0px;
 	transition: all 0.3s ease;
 }
 
-.buttons button:hover{
+
+.replay:hover{
+	background: #0c5d41;
+}
+.quit:hover{
 	background: #0c5d41;
 }
