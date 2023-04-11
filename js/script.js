@@ -1,11 +1,12 @@
 const startBtn = document.querySelector(".start-btn");
+const introContainer = document.querySelector(".intro-container");
 const quizContainer = document.querySelector(".quiz-container");
 const resualtContainer = document.querySelector(".result-container");
-const replayBtn = document.querySelector(".replay");
 const quitBtn = document.querySelector(".quit");
 const optionList = document.querySelector(".question-box__option-list");
 
 startBtn.onclick = ()=>{
+introContainer.classList.add("intro-container-off");
 quizContainer.classList.add("activeQuiz");
 showQuestions(0);
 showQuestionsCounter(1);
@@ -16,8 +17,7 @@ let questionNumber = 1;
 let score = 0;
 const nextBtn = document.querySelector(".next-btn");
 
-
-	nextBtn.onclick = () =>{
+	nextBtn.onclick = () => {
 	if(questionCount < questions.length-1){
 	questionCount++;
 	questionNumber++;
@@ -30,11 +30,14 @@ const nextBtn = document.querySelector(".next-btn");
 	}
 }
  
+ quitBtn.onclick = () => {
+	window.location.reload();
+ }
 
 function showMultipleAnswer(index){
 	const multipleAnswer = document.querySelector(".multiple-answer-options");
 		if(questions[index].answer.length > 1){
-			let multipleAnswerTag = `<div class="multiple-answer-options"><span>${'*'}</span>${'You must select multiple answers for this question.'}</div>`;
+			let multipleAnswerTag = `<div class="multiple-answer-options"><span>${'*'}</span>${'You must select multiple answers in this question.'}</div>`;
 			multipleAnswer.innerHTML = multipleAnswerTag;
 		}else{
 			let multipleAnswerTag = `<div class="multiple-answer-options"><span>${''}</span>${''}</div>`;
@@ -48,7 +51,7 @@ function showQuestions(index){
 	let optionTag ='<div class="question-box__option"><span>' + questions[index].options[0] + '</span></div>'
 									+'<div class="question-box__option"><span>' + questions[index].options[1] + '</span></div>'
 									+'<div class="question-box__option"><span>' + questions[index].options[2] + '</span></div>';
-								
+
 	questionText.innerHTML = questionTag;
 	optionList.innerHTML = optionTag;
 
@@ -59,17 +62,14 @@ function showQuestions(index){
 		}
 }
 
-
 let tickIcon = '<div class="icon tick"><i class="fa fa-check" aria-hidden="true"></i></div>';
 let crossIcon = '<div class="icon cross"><i class="fa fa-times" aria-hidden="true"></i></div>';
 
 function optionSelection(answer){
-	 
   let userAnswer = answer.textContent;
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
  
-
 		if(correctAnswer.includes(userAnswer)){
 			score+=1;
 			answer.classList.add("correct");
@@ -82,6 +82,7 @@ function optionSelection(answer){
 			for(let i = 0;i<allOptions;i++){
 				if(optionList.children[i].textContent == correctAnswer){
 					optionList.children[i].classList.add("correct-off");
+					optionList.children[i].insertAdjacentHTML("beforeend",tickIcon);
 				}
 			}
 		}
@@ -107,10 +108,7 @@ function optionSelection(answer){
 		if(correctAnswersCount == 1 && answersTotalCount == 2){
 			score-=1;
 		}
-	 
 }
-
- 
 
 function showQuestionsCounter(index){
 	const totalQuestions = document.querySelector(".header__total-questions");
@@ -122,14 +120,15 @@ function showResult(){
 	quizContainer.classList.remove("activeQuiz");
 	resualtContainer.classList.add("activeResult");
 	const scoreText = document.querySelector(".result-container__score-text");
+
 	if(score > 5){
-		let scoreTag = '<span>Congratulations, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		let scoreTag = '<span>Congratulations, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions.</span> ';
 		scoreText.innerHTML = scoreTag;
 	}else if(score > 3){
-		let scoreTag = '<span>Cool, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		let scoreTag = '<span>Cool, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions.</span> ';
 		scoreText.innerHTML = scoreTag;
 	}else{
-		let scoreTag = '<span>Its a pity, you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions</span> ';
+		let scoreTag = '<span>Its a pity,but you answered<p>'+ score +'</p> out of <p>'+ questions.length +'</p>questions.</span> ';
 		scoreText.innerHTML = scoreTag;
 	}
 }

@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<title>Quiz Application</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <title>Quiz Application</title>
+  </head>
+  <body>
+    <div class="intro-container">
+      <div class="intro-container__title">Welcome to the quiz application</div>
+      <div class="intro-container__description">
+        A quiz is a game in which players are asked questions on various topics.
+        You have a unique opportunity to test your knowledge and show how smart
+        you are.
+      </div>
+      <button class="start-btn">Start Quiz</button>
+    </div>
 
-	<button class="start-btn">Start Quiz</button>
+    <div class="quiz-container">
+      <header class="header">
+        <div class="header__title">Quiz Application</div>
 
-	<div class="quiz-container">
-		<header class="header">
+        <div class="header__total-questions"></div>
+      </header>
 
-			<div class="header__title">Quiz Application</div>
+      <section class="question-box">
+        <div class="question-box__question"></div>
+        <div class="multiple-answer-options"><span></span></div>
 
-			<div class="header__total-questions"></div>
+        <div class="question-box__option-list"></div>
+      </section>
 
-		</header>
-		
-		<section class="question-box">
+      <footer class="footer">
+        <button class="next-btn">Next</button>
+      </footer>
+    </div>
 
-			<div class="question-box__question"></div>
-			<div class="multiple-answer-options"><span></span></div>
+    <div class="result-container">
+      <div class="result-container__icon">
+        <i class="fa fa-flag-checkered" aria-hidden="true"></i>
+      </div>
 
-			<div class="question-box__option-list"></div>
+      <div class="result-container__complete-text">
+        You've completed the Quiz!
+      </div>
 
-		</section>
+      <div class="result-container__score-text"></div>
 
-		<footer class="footer">
-			<button class="next-btn">Next</button>
-		</footer>
+      <button class="quit">Quit Quiz</button>
+    </div>
 
-		</div>
-	 
-<div class="result-container">
-
-	<div class="result-container__icon">
-		<i class="fa fa-flag-checkered" aria-hidden="true"></i>
-	</div>
-	
-	<div class="result-container__complete-text">You've completed the Quiz!</div>
-
-	<div class="result-container__score-text"></div>
-
-	<div class="buttons">
-		<button class="replay">Replay Quiz</button>
-		<button class="quit">Quit Quiz</button>
-	</div>
-
-</div>
-
-
-
-
-
-
-
- 
-	<script src="js/script.js"></script>
-	<script src="js/questions.js"></script>
-</body>
+    <script src="js/script.js"></script>
+    <script src="js/questions.js"></script>
+  </body>
 </html>
