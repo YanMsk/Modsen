@@ -273,7 +273,7 @@ body {
 
 .result-container__score-text span p {
   font-weight: 700;
-	color: #0c5d41;
+  color: #0c5d41;
   padding: 0 5px;
 }
 
@@ -298,4 +298,152 @@ body {
 
 .quit:hover {
   background: #0c5d41;
+}
+
+@media only screen and (max-width: 768px) {
+  .intro-container,
+  .quiz-container,
+  .result-container {
+    width: 80%;
+  }
+	
+  .intro-container__title {
+    font-size: 25px;
+  }
+
+  .intro-container__description {
+    width: 80%;
+  }
+
+  .start-btn {
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    border-bottom: 5px solid #0c5d41;
+  }
+
+  .header {
+    height: 190px;
+  }
+
+  .header__title {
+    font-size: 25px;
+  }
+
+  .question-box__question {
+    font-size: 20px;
+  }
+
+  .question-box__option {
+    font-size: 15px;
+  }
+
+  .footer {
+    height: 120px;
+  }
+
+  .next-btn {
+    font-size: 18px;
+    margin: 10px 0;
+    height: 40px;
+    width: 170px;
+    border-bottom: 5px solid #0c5d41;
+  }
+
+  .result-container__icon {
+    font-size: 60px;
+  }
+
+  .result-container__complete-text {
+    font-size: 20px;
+  }
+
+  .result-container__score-text span {
+    font-size: 15px;
+  }
+
+  .quit {
+    margin: 10px 0;
+    height: 40px;
+    width: 170px;
+    font-size: 18px;
+    border-bottom: 5px solid #0c5d41;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .intro-container__title {
+    font-size: 20px;
+  }
+
+  .intro-container__description {
+    font-size: 15px;
+    width: 80%;
+    text-align: justify;
+  }
+
+  .start-btn {
+    height: 40px;
+    width: 160px;
+    font-size: 18px;
+    border-bottom: 5px solid #0c5d41;
+  }
+
+  .header {
+    height: 160px;
+  }
+
+  .header__title {
+    font-size: 20px;
+  }
+
+  .question-box {
+    padding: 20px 40px 15px 40px;
+  }
+
+  .question-box__question {
+    font-size: 18px;
+  }
+
+  .multiple-answer-options {
+    font-size: 14px;
+  }
+
+  .question-box__option {
+    font-size: 14px;
+  }
+
+  .footer {
+    height: 100px;
+  }
+
+  .next-btn {
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    border-bottom: 5px solid #0c5d41;
+  }
+
+  .result-container__icon {
+    font-size: 50px;
+  }
+
+  .result-container__complete-text {
+    font-size: 18px;
+  }
+
+  .result-container__score-text span {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .quit {
+    margin: 5px 0;
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    border-bottom: 5px solid #0c5d41;
+  }
 }
