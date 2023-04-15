@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Quiz Application</title>
   </head>
   <body>
     <div class="intro-container">
       <div class="intro-container__title">Welcome to the quiz application</div>
+      <div class="mode-btn">
+        <span class="material-symbols-outlined" id="mode-icon"> wb_sunny </span>
+      </div>
       <div class="intro-container__description">
         A quiz is a game in which players are asked questions on various topics.
         You have a unique opportunity to test your knowledge and show how smart
@@ -22,7 +25,6 @@
     <div class="quiz-container">
       <header class="header">
         <div class="header__title">Quiz Application</div>
-
         <div class="header__total-questions"></div>
       </header>
 
@@ -40,7 +42,9 @@
 
     <div class="result-container">
       <div class="result-container__icon">
-        <i class="fa fa-flag-checkered" aria-hidden="true"></i>
+        <span class="material-symbols-outlined" id="flag-icon"
+          >sports_score</span
+        >
       </div>
 
       <div class="result-container__complete-text">

@@ -62,8 +62,8 @@ function showQuestions(index){
 		}
 }
 
-let tickIcon = '<div class="icon tick"><i class="fa fa-check" aria-hidden="true"></i></div>';
-let crossIcon = '<div class="icon cross"><i class="fa fa-times" aria-hidden="true"></i></div>';
+let tickIcon = '<div class="icon tick"><span class="material-symbols-outlined" style="display:flex; align-items:center;">done</span></i></div>';
+let crossIcon = '<div class="icon cross"><span class="material-symbols-outlined" style="display:flex; align-items:center;">close</span></i></div>';
 
 function optionSelection(answer){
   let userAnswer = answer.textContent;
@@ -132,3 +132,5 @@ function showResult(){
 		scoreText.innerHTML = scoreTag;
 	}
 }
+
+ 
