@@ -39,16 +39,17 @@ body {
   text-transform: uppercase;
   margin-bottom: 15px;
 }
+
  .mode-btn{
 	width: 400px;
 	cursor: default;
+	color: #0c5d41;
 	border-bottom: 2px solid #0c5d41;
 	margin: 25px 0px 25px 0px;
  }
  
  #mode-icon{
 	font-size: 35px;
-  color: #0c5d41;
   font-weight: 400;
   padding-bottom: 15px; 
 	cursor: pointer;
@@ -85,10 +86,9 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .start-btn:hover {
   background: #0c5d41;
-  color: #fff;
+  color: #f7fdfc;
 }
 
 .quiz-container {
@@ -108,7 +108,6 @@ body {
 .header {
   height: 200px;
   padding: 0 30px;
-  border-bottom: 5px solid #169c6e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +124,6 @@ body {
 
 .header__total-questions span {
   display: flex;
-  color: #212121;
   align-items: center;
   user-select: none;
 }
@@ -139,6 +137,7 @@ body {
   position: relative;
   padding: 30px 50px 25px 50px;
   background: #fff;
+	border-top: 5px solid #169c6e;
   z-index: 1;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 0px 5px 0px rgba(34, 60, 80, 0.2);
@@ -235,14 +234,14 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
-  color: #fff;
+  color: #f7fdfc;
   background-color: #169c6e;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .next-btn:hover {
-  background: #0c5d41;
+  background-color: #0c5d41;
 }
 
 .result-container {
@@ -256,9 +255,13 @@ body {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
+.result-container__icon{
+	color: #0c5d41;
+}
+
 #flag-icon {
   font-size: 90px;
-	color: #0c5d41;
+	/* color: #0c5d41; */
   margin-bottom: 15px;
 }
 
@@ -273,16 +276,16 @@ body {
   margin: 10px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #212121;
   margin-bottom: 30px;
 }
 
 .result-container__score-text span p {
   font-weight: 700;
-  color: #0c5d41;
   padding: 0 5px;
 }
 
+
+	
 .quit {
   display: inline-block;
   padding: 0 20px;
@@ -296,7 +299,7 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
-  color: #fff;
+  color: #f7fdfc;
   background-color: #169c6e;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -325,7 +328,6 @@ body {
     height: 45px;
     width: 180px;
     font-size: 20px;
-    border-bottom: 5px solid #0c5d41;
   }
 
   .header {
@@ -384,11 +386,14 @@ body {
     text-align: justify;
   }
 
+	.mode-btn{
+		width: 125%;
+	 }
+
   .start-btn {
     height: 40px;
     width: 160px;
     font-size: 18px;
-    border-bottom: 5px solid #0c5d41;
   }
 
   .header {

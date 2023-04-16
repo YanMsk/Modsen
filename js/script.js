@@ -105,7 +105,7 @@ function optionSelection(answer){
 			}
 		}
 
-		if(correctAnswersCount == 1 && answersTotalCount == 2){
+		if(correctAnswersCount == 1 && answersTotalCount == 2 && score != 0){
 			score-=1;
 		}
 }
@@ -133,4 +133,3 @@ function showResult(){
 	}
 }
 
- 
