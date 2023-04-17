@@ -32,6 +32,13 @@ const nextBtn = document.querySelector(".next-btn");
  
  quitBtn.onclick = () => {
 	window.location.reload();
+	// if(localStorage.getItem("theme")==="dark"){
+	// 	localStorage.getItem("theme");
+	// 	localStorage.clear();
+	// 	localStorage.setItem("theme","dark");
+	// }else{
+	// 	localStorage.clear();
+	// }
  }
 
 function showMultipleAnswer(index){
@@ -70,6 +77,8 @@ function optionSelection(answer){
   let correctAnswer = questions[questionCount].answer;
   let allOptions = optionList.children.length;
  
+	localStorage.setItem(questions[questionCount].question,userAnswer);
+
 		if(correctAnswer.includes(userAnswer)){
 			score+=1;
 			answer.classList.add("correct");
