@@ -15,6 +15,7 @@ showQuestionsCounter(1);
 let questionCount = 0;
 let questionNumber = 1;
 let score = 0;
+
 const nextBtn = document.querySelector(".next-btn");
 
 	nextBtn.onclick = () => {
@@ -32,13 +33,13 @@ const nextBtn = document.querySelector(".next-btn");
  
  quitBtn.onclick = () => {
 	window.location.reload();
-	// if(localStorage.getItem("theme")==="dark"){
-	// 	localStorage.getItem("theme");
-	// 	localStorage.clear();
-	// 	localStorage.setItem("theme","dark");
-	// }else{
-	// 	localStorage.clear();
-	// }
+	// // if(localStorage.getItem("theme")==="dark"){
+	// // 	localStorage.getItem("theme");
+	// // 	localStorage.clear();
+	// // 	localStorage.setItem("theme","dark");
+	// // }else{
+	// // 	localStorage.clear();
+	// // }
  }
 
 function showMultipleAnswer(index){
@@ -114,13 +115,16 @@ function optionSelection(answer){
 			}
 		}
 
-		if(correctAnswersCount == 1 && answersTotalCount == 2 && score != 0){
+		if(incorrectAnswersCount == 1 && answersTotalCount == 2 && score != 0){
+			score-=1;
+		}
+		if(correctAnswersCount == 2 && answersTotalCount == 2 && score != 0){
 			score-=1;
 		}
 }
 
 function showQuestionsCounter(index){
-	const totalQuestions = document.querySelector(".header__total-questions");
+	const totalQuestions = document.querySelector(".quiz-header__total-questions");
 	let totalQuestionsTag = '<span><p>'+ index +'</p>of<p>'+ questions.length +'</p>Questions</span>';
 	totalQuestions.innerHTML = totalQuestionsTag;
 }

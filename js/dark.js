@@ -1,8 +1,8 @@
 const introTitle = document.querySelector(".intro-container__title");
 const introDescription = document.querySelector(".intro-container__description");
 const modeBtn = document.querySelector(".mode-btn");
-const headerTitle = document.querySelector(".header__title");
-const totalQuestion = document.querySelector(".header__total-questions");
+const headerTitle = document.querySelector(".quiz-header__title");
+const totalQuestion = document.querySelector(".quiz-header__total-questions");
 const questionBox = document.querySelector(".question-box");
 const questionBoxQuestion = document.querySelector(".question-box__question");
 const flagIcon = document.querySelector(".result-container__icon");
@@ -21,7 +21,7 @@ modeIcon.addEventListener("click", (event) =>{
 });
 
 function addDarkClass(){
-	try{
+	 
 		if(localStorage.getItem("theme")==="dark"){
 			document.querySelector("body").classList.add("dark");
 			modeIcon.textContent = "dark_mode";
@@ -56,6 +56,6 @@ function addDarkClass(){
 			quitBtn.classList.remove("dark-quit-btn");
 
 		}
-	}catch(err){}
+	 
 }
 addDarkClass();

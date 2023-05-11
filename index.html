@@ -1,60 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/dark.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/dark.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"rel="stylesheet"/>
     <title>Quiz Application</title>
   </head>
   <body>
-    <div class="intro-container">
-      <div class="intro-container__title">Welcome to the quiz application</div>
-      <div class="mode-btn">
-        <span class="material-symbols-outlined" id="mode-icon"> wb_sunny </span>
-      </div>
-      <div class="intro-container__description">
-        A quiz is a game in which players are asked questions on various topics.
-        You have a unique opportunity to test your knowledge and show how smart
-        you are.
-      </div>
-      <button class="start-btn">Start Quiz</button>
-    </div>
-
-    <div class="quiz-container">
+    <div class="page">
       <header class="header">
-        <div class="header__title">Quiz Application</div>
-        <div class="header__total-questions"></div>
+        <div class="head-line"></div>
+        <div class="mode-btn">
+          <span class="material-symbols-outlined" id="mode-icon">wb_sunny</span>
+        </div>
+        <div class="head-line"></div>
       </header>
 
-      <section class="question-box">
-        <div class="question-box__question"></div>
-        <div class="multiple-answer-options"></div>
+      <main class="main">
+        <div class="intro-container">
+          <div class="intro-container__title">Welcome to the quiz application</div>
+          <div class="intro-container__description">
+            A quiz is a game in which players are asked questions on various
+            topics. You have a unique opportunity to test your knowledge and
+            show how smart you are.
+          </div>
+          <button class="start-btn">Start Quiz</button>
+        </div>
 
-        <div class="question-box__option-list"></div>
-      </section>
+        <div class="quiz-container">
+          <div class="quiz-header">
+            <div class="quiz-header__title">Quiz Application</div>
+            <div class="quiz-header__total-questions"></div>
+          </div>
+
+          <div class="question-box">
+            <div class="question-box__question"></div>
+            <div class="multiple-answer-options"></div>
+            <div class="question-box__option-list"></div>
+          </div>
+
+          <div class="next-question">
+            <button class="next-btn">Next</button>
+          </div>
+        </div>
+
+        <div class="result-container">
+          <div class="result-container__icon">
+            <span class="material-symbols-outlined" id="flag-icon">sports_score</span>
+          </div>
+
+          <div class="result-container__complete-text">
+            You've completed the Quiz!
+          </div>
+
+          <div class="result-container__score-text"></div>
+
+          <button class="quit">Quit Quiz</button>
+        </div>
+      </main>
 
       <footer class="footer">
-        <button class="next-btn">Next</button>
+        <div class="foot-line"></div>
+        <div class="foot-line"></div>
       </footer>
     </div>
 
-    <div class="result-container">
-      <div class="result-container__icon">
-        <span class="material-symbols-outlined" id="flag-icon">sports_score</span>
-      </div>
-
-      <div class="result-container__complete-text">
-        You've completed the Quiz!
-      </div>
-
-      <div class="result-container__score-text"></div>
-
-      <button class="quit">Quit Quiz</button>
-    </div>
-
+		
     <script src="js/script.js"></script>
     <script src="js/questions.js"></script>
     <script src="js/dark.js"></script>
